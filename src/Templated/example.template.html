@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script includes>
+      req("date");
+      opt("datetime");
+    </script>
+    <title>{this.datetime ?? this.date}</title>
+    <body>
+      <h1 @style="display:block;">Blocked el</h1>
+      <h1 @on:click={localStorage.setItem('item', '32')}>Click Me!</h1>
+      <p @attr:class="meandyou"></p>
+    </body>
+  </head>
+</html>

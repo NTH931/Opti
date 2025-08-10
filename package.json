@@ -1,0 +1,115 @@
+{
+  "name": "optijs",
+  "type": "module",
+  "version": "0.0.3",
+  "private": false,
+  "description": "Lightweight DOM manipulation, styling, and utility extension for native JavaScript objects — without wrappers.",
+  "exports": {
+    ".": {
+      "import": "./dist/all.js",
+      "types": "./types/all.lib.d.ts"
+    },
+    "./core": {
+      "import": "./dist/opti.js",
+      "types": "./types/opti.lib.d.ts"
+    },
+    "./crafty": {
+      "import": "./dist/crafty.js",
+      "types": "./types/Crafty/crafty.lib.d.ts"
+    },
+    "./requests": {
+      "import": "./dist/requests.js",
+      "types": "./types/Requests/requests.lib.d.ts"
+    },
+    "./query": {
+      "import": "./dist/query.js",
+      "types": "./types/Query/query.lib.d.ts"
+    },
+    "./streams": {
+      "import": "./dist/streams.js",
+      "types": "./types/Streams/streams.lib.d.ts"
+    },
+    "./flow": {
+      "import": "./dist/flow.js",
+      "types": "./types/flow.lib.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NTH931/opti.git"
+  },
+  "scripts": {
+    "build": "npx webpack --config config/webpack.config.js",
+    "test": "npm run build && npm run check silent && npx jest --config config/jest.config.js --verbose --passWithNoTests",
+    "update-definitions": "node scripts/update.js",
+    "git-push": "node scripts/push.js",
+    "check": "node scripts/check.js",
+    "prepublishOnly": "npm run build"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "./dist/all.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "keywords": [
+    "dom",
+    "javascript",
+    "opti",
+    "optijs",
+    "utility",
+    "dom-manipulation",
+    "native",
+    "library",
+    "web",
+    "frontend"
+  ],
+  "author": "LeaTHeR_SHoRTs",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/NTH931/opti/issues"
+  },
+  "homepage": "https://github.com/NTH931/opti#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "types",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "eslint": "^9.30.0",
+    "jsdom": "^26.1.0",
+    "tsx": "^4.20.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.0.15",
+    "@types/webpack": "^5.28.5",
+    "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
+    "glob": "^11.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.0",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
+  }
+}

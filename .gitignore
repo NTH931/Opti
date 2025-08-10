@@ -1,0 +1,9 @@
+tsconfig.json
+.npmignore
+/node_modules
+.env
+/scripts
+/build
+/dist
+.eslintignore
+package-lock.json
